@@ -96,8 +96,8 @@ span {
 
 .type input {
     appearance: none;
-    width: 10px;
-    height: 10px;
+    width: .6em;
+    height: .6em;
     border-radius: 50%;
     padding: .4em;
 }
