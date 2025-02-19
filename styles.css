@@ -1,0 +1,202 @@
+/* Fonts */
+@font-face {
+    font-family: "Karla-Cold";
+    src: url("assets/fonts/static/Karla-Bold.ttf");
+}
+@font-face {
+    font-family: "Karla-Regular";
+    src: url("assets/fonts/static/Karla-Regular.ttf");
+}
+
+/* General */
+* {
+    box-sizing: border-box
+}
+
+legend {
+    font-size: 1rem;
+}
+
+body {
+    font-family: 'Karla-Regular', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: hsl(148, 38%, 91%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+h1 {
+    margin: 0 0 1em 0;
+}
+
+form {
+    width: 100%;
+    margin: 0 0 1em 0;
+}
+
+input {
+    width: 100%;
+    padding: .7em;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    font-family: 'Karla-Regular', sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+span {
+    color: hsl(169, 82%, 27%);
+}
+
+/* Layout */
+.container {
+    background-color: white;
+    margin: 0 auto;
+    width: 40%;
+    padding: 1.7em;
+    border-radius: 15px;
+}
+
+/* name-container */
+.name-container form {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+/* email-container */
+
+
+/* query-container */
+.query-container div {
+    display: flex;
+    margin: 1em 0 0 0;
+    gap: 30px;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid hsl(186, 15%, 59%);
+    padding: .7em;
+    border-radius: 5px;
+}
+
+.type input {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: .4em;
+}
+
+.type input:checked {
+    background-color: hsl(169, 82%, 27%);
+}
+
+.type span {
+    color:  hsl(187, 24%, 22%);
+    white-space: nowrap;
+}
+
+/* message-container */
+.textarea label {
+    display: block;
+}
+
+.textarea textarea {
+    resize: none;
+    width: 100%;
+    height: 70px;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    font-family: 'Karla-Regular', sans-serif;
+}
+
+/* check-container */
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox label {
+    text-wrap: nowrap;
+}
+
+.checkbox input {
+    padding: 1em;
+    margin: 0 1em 0 0;
+    width: 20px;
+    border-radius: 0;
+}
+
+.checkbox input:checked {
+    background-color: hsl(169, 82%, 27%);
+}
+
+/* submit */
+button {
+    width: 100%;
+    font-family: 'Karla-Regular', sans-serif;
+    background-color: hsl(169, 82%, 27%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 5px;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsl(169, 82%, 22%);
+}
+
+button:active {
+    background-color: hsl(169, 82%, 17%);
+}
+
+/* Media Queries */
+@media (max-width: 796px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+    }
+
+    .checkbox label {
+        text-wrap: wrap;
+    }
+}
+
+@media (max-width: 375px) {
+    .name-container form {
+        flex-direction: column;
+    }
+
+    .query-container div {
+        flex-direction: column;
+    }
+
+    .textarea textarea {
+        height: 150px;
+    }
+
+    .checkbox label {
+        text-wrap: wrap;
+    }
+}
