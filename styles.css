@@ -184,6 +184,9 @@ button:active {
 }
 
 @media (max-width: 480px){
+    body {
+        padding: 24em 0;
+    }
     .name-container form {
         flex-direction: column;
     }
