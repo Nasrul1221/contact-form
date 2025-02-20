@@ -1,13 +1,45 @@
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
-const radio = document.getElementById('radio'); // upcoming
 const textarea = document.getElementById('message');
+const form = document.getElementById('form');
+const checkbox = document.querySelector('input[type="checkbox"]');
+
 const errorF = document.getElementById('error-f');
 const errorL = document.getElementById('error-l');
 const errorE = document.getElementById('error-e');
-const errorR = document.getElementById('error-r'); //upcoming
+const errorR = document.getElementById('error-r');
 const errorTX = document.getElementById('error-tx');
+const errorC = document.getElementById('error-c');
+
+form.addEventListener('submit', (event) => {
+    if (!firstName.validity.valid) {
+        firstError();
+        event.preventDefault();
+    }
+    if (!lastName.validity.valid) {
+        lastError();
+        event.preventDefault();
+    }
+    if (!email.validity.valid) {
+        emailError();
+        event.preventDefault();
+    }
+    if (!textarea.validity.valid) {
+        textareaError();
+        event.preventDefault();
+        }
+    const radio = document.querySelector('input[type="radio"]:checked');
+    if (!radio) {
+        radioError();
+        event.preventDefault();
+    }
+    const checkbox = document.querySelector('input[type="checkbox"]:checked');
+    if (!checkbox) {
+        checkBoxError();
+        event.preventDefault();
+    }
+})
 
 firstName.addEventListener('input', () => {
     if (firstName.validity.valid) {
@@ -94,3 +126,36 @@ function textareaError() {
         errorTX.className = 'error active';
     }
 }
+
+function radioError() {
+    const radio = document.querySelector('input[type="radio"]:checked');
+    if (!radio) {
+        errorR.textContent = 'Please select an option';
+        errorR.className = 'error active';
+    }
+    else {
+        errorR.textContent = '';
+        errorR.className = 'error';
+    }
+}
+document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+        radioError();
+    });
+});
+
+function checkBoxError() {
+    if (!checkbox.checked) {
+        errorC.textContent = 'Please select an option';
+        errorC.className = 'error active';
+    }
+    else {
+        errorC.textContent = '';
+        errorC.className = 'error';
+    }
+}
+
+
+checkbox.addEventListener('change', () => {
+    checkBoxError();
+});

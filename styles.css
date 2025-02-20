@@ -76,31 +76,31 @@ span {
 }
 
 /* name-container */
-.name-container form {
+.name-container {
     display: flex;
-    justify-content: center;
-    gap: 1em;
-    width: 100%;
+    justify-content: space-between;
+    margin: 0 0 .5em 0;
 }
 
 .name-container div {
-    width: 100%;
+    width: 49%;
 }
 
 /* email-container */
-
+.email-cont {
+    margin: 0 0 .5em 0;
+}
 
 /* query-container */
 .query-container div {
     display: flex;
-    margin: 1em 0 0 0;
-    gap: 30px;
+    margin: .4em 0 0 0;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .type {
-    display: flex;
-    align-items: center;
-    width: 100%;
+    width: 49%;
     border: 1px solid hsl(186, 15%, 59%);
     padding: .7em;
     border-radius: 5px;
@@ -124,6 +124,10 @@ span {
 }
 
 /* textarea-container */
+.textarea {
+    margin: .5em 0 0 0;
+}
+
 .textarea label {
     display: block;
 }
@@ -145,6 +149,12 @@ span {
 .checkbox {
     display: flex;
     align-items: center;
+    margin: 1em 0 0 0;
+    position: relative;
+}
+
+.checkboxEr {
+
 }
 
 .checkbox label {
@@ -153,7 +163,6 @@ span {
 
 .checkbox input {
     padding: 1em;
-    margin: 0 1em 0 0;
     width: 20px;
     border-radius: 0;
 }
@@ -172,6 +181,7 @@ button {
     border-radius: 5px;
     height: 2.5em;
     cursor: pointer;
+    margin: 1em 0 0 0;
 }
 
 button:hover {
@@ -203,8 +213,17 @@ button:active {
     body {
         padding: 24em 0;
     }
-    .name-container form {
+
+    .name-container {
         flex-direction: column;
+    }
+    .name-container div {
+        width: 100%;
+    }
+
+    .type {
+        width: 100%;
+        margin: 0 0 .5em;
     }
 
     .query-container div {
